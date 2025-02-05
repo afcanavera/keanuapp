@@ -16,18 +16,14 @@
         Returns: None
     */
     constructor(questions){        
-
-        if(questions.type != Number){
-            throw new exception("Parameter error: please enter a ")
-        }
         this.#score = 0;
         this.#order = 1;
         this.#questionsNum =questions;
         this.#questions = [];
-        for(var q in questions){
+        for(var q=0; q<questions;q++){
             var temp = new Question();
-            temp.initializeQuestion();
-            questions.append(temp);
+            temp.intializeQuestion();
+            this.#questions.push(temp);
         }
 
     }
@@ -39,11 +35,13 @@
         Returns: Question variable
     */
     getNextQuestion() {
-        if(this.#order > questionsNum){
+        if(this.#order > this.#questionsNum){
             throw new exception("function order has been maxed out")
         }
         this.#checkValidation =true;
-        return this.#questions.at(this.#order-1);
+        console.log(this.#questions[this.#order-1]);
+
+        return this.#questions[this.#order-1];
     }
     /* 
         FUNCTIONALITY: Initializes all the quiz questions that will be asked for the quiz session.
@@ -71,8 +69,8 @@
             return answer;
         }
     }
-    getScore(){
-        return this.#score;
+    getOrder(){
+        return this.#order;
     }
 
      

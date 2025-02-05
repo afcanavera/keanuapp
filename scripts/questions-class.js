@@ -17,7 +17,7 @@ class Question {
     this.options = [response.data[0].movie, response.data[1].movie];
     return true;
   }
-
+  
   getContent() {
     return this.questionData;
   }
