@@ -1,4 +1,4 @@
-var quiz = new Quiz();
+var quiz = new Quiz(10);
 function createNewQuiz(){
-    quiz
+    quiz = new Quiz(10);
 }

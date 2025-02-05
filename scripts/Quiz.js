@@ -7,6 +7,7 @@
     #score;
     #order;
     #questionsNum;
+    #checkValidation = false;
     /* 
         FUNCTIONALITY: Initializes all the quiz questions that will be asked for the quiz session.
 
@@ -42,20 +43,26 @@
             throw new exception("function order has been maxed out")
         }
         return this.#questions.at(this.#order-1);
+        this.#checkValidation =true;
     }
     getScore(){
         return this.#score;
     }
+
     validateQuestion(answer){
-        if(this.#questions.validateQuestion(answer)){
+        if(this.#checkValidation){
+            return;
+        }
+        if(this.#questions.at(this.#order++-1).validateQuestion(answer)){
             this.#score++;
-            this.order++;
+            this.#checkValidation = false;
             return true;
         }else{
+            this.#score++;
+            this.#checkValidation = false;
+            this.#order++;
             return answer;
-
         }
-
     }
     getScore(){
         return this.#score;
