@@ -15,6 +15,9 @@ body {
   animation: gradient 4s ease infinite;
   height: 100vh;
   padding: 5%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
 }
 @media screen and (min-width: 768px) {
   body {
@@ -95,12 +98,13 @@ h2 {
   aspect-ratio: 16/9;
 }
 .section__score {
-  margin-top: 3rem;
+  margin-top: 1.5rem;
 }
 
 .footer {
   display: flex;
   justify-content: space-between;
+  margin-top: 2rem;
 }
 
 button {
@@ -123,4 +127,8 @@ button:hover {
 button:active {
   color: black;
   background-color: white;
+}
+
+.hide {
+  display: none;
 }

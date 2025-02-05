@@ -16,7 +16,16 @@ class Question {
     );
 
     this.questionData = response.data[0];
-    this.options = [response.data[0].movie, response.data[1].movie];
+    let option1 = response.data[0].movie;
+    let option2 = response.data[1].movie;
+    if (option1 === option2) {
+      if (option1 === "John Wick") {
+        option1 = "The Matrix";
+      } else {
+        option1 = "John Wick";
+      }
+    }
+    this.options = [option1, option2];
     return true;
   }
 
@@ -55,3 +64,12 @@ async function getQuestion() {
 }
 
 getQuestion();
+
+const buttonstart = document.querySelector(".section__start");
+buttonstart.addEventListener('click', () => {
+  const buttonAppear = document.querySelectorAll(".sec-button");
+  buttonAppear.forEach((element) => {
+    element.classList.remove("hide");
+  });
+  document.querySelector(".section__score").classList.remove("hide");
+});

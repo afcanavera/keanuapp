@@ -12,6 +12,10 @@ form.addEventListener("click", function (event) {
   quiz = new Quiz(10);
   questionActive = true;
   setNextQuestion();
+  let scoreEl = document.querySelector(".section__score");
+  scoreEl.innerHTML = `Which movie is this 'whoa' from?`;
+  let movie1 = document.querySelector(".section__video");
+  movie1.classList.remove("hide");
 });
 async function setNextQuestion() {
   if (!(quiz.getOrder() >= 10)) {
@@ -40,7 +44,7 @@ form2.addEventListener("click", function (event) {
   let validation = questionNow.validateAnswer(val);
   let scoreEl = document.querySelector(".section__score");
   if (validation) {
-    scoreEl.innerText = "Yay! You are right";
+    scoreEl.innerHTML = `<img src="https://media.tenor.com/hY5YVzpFgIkAAAAM/keanu-reeves-woah.gif" alt="">`;
   } else {
     scoreEl.innerText = "Sorry! You are wrong";
   }
@@ -53,7 +57,7 @@ form3.addEventListener("click", function (event) {
   let validation = questionNow.validateAnswer(val);
   let scoreEl = document.querySelector(".section__score");
   if (validation) {
-    scoreEl.innerText = "Yay! You are right";
+    scoreEl.innerHTML = `<img src="https://media.tenor.com/hY5YVzpFgIkAAAAM/keanu-reeves-woah.gif" alt="">`;
   } else {
     scoreEl.innerText = "Sorry! You are wrong";
   }
