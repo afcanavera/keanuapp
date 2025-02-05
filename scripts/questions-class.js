@@ -19,7 +19,7 @@ class Question {
 
   getOptions() {}
 
-  validateAnswer() {}
+  validateAnswer(String) {}
 
   getAudio() {}
 
