@@ -42,8 +42,8 @@
         if(this.#order > questionsNum){
             throw new exception("function order has been maxed out")
         }
-        return this.#questions.at(this.#order-1);
         this.#checkValidation =true;
+        return this.#questions.at(this.#order-1);
     }
     getScore(){
         return this.#score;
