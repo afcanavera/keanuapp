@@ -46,6 +46,10 @@ h1, h2, p {
 h1 {
   font-size: 1.5rem;
   line-height: 1.5rem;
+  @include tablet {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
 }
 
 h2 {
