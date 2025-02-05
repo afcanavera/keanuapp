@@ -45,6 +45,13 @@
         this.#checkValidation =true;
         return this.#questions.at(this.#order-1);
     }
+    /* 
+        FUNCTIONALITY: Initializes all the quiz questions that will be asked for the quiz session.
+
+        Parameters: None
+
+        Returns: Question variable
+    */
     getScore(){
         return this.#score;
     }
