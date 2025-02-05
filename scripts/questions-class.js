@@ -1,8 +1,10 @@
 class Question {
+  questionData;
+
   constructor() {
     this.baseUrl = "https://whoa.readme.io/reference";
   }
-  
+
   async intializeQuestion() {
     const response = await axios.get(
       "https://whoa.onrender.com/whoas/random?results=2",
@@ -27,7 +29,7 @@ class Question {
   }
 
   validateAnswer(answer) {
-    if (answer == this.questionData.year) {
+    if (answer == this.questionData.movie) {
       return true;
     }
     return false;
@@ -39,6 +41,7 @@ class Question {
   }
 
   getVideo() {
+    console.log(this.questionData);
     const videolist = this.questionData.video;
     console.log(videolist["360p"]);
     return videolist["360p"];
