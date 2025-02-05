@@ -15,7 +15,6 @@ class Question {
 
     this.questionData = response.data[0];
     const options = [response.data[0].movie, response.data[1].movie];
-    //console.log(options);
     return true;
   }
 
