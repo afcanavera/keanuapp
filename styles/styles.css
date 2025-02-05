@@ -16,6 +16,11 @@ body {
   height: 100vh;
   padding: 5%;
 }
+@media screen and (min-width: 768px) {
+  body {
+    padding: 5% 20%;
+  }
+}
 
 @keyframes gradient {
   0% {
@@ -77,10 +82,14 @@ h2 {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  margin-top: 3rem;
 }
 .section__video {
   width: 100%;
   aspect-ratio: 16/9;
+}
+.section__score {
+  margin-top: 3rem;
 }
 
 .footer {

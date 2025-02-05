@@ -18,6 +18,9 @@ body {
 	animation: gradient 4s ease infinite;
 	height: 100vh;
   padding: 5%;
+  @include tablet {
+    padding: 5% 20%;
+  }
 }
 
 @keyframes gradient {
@@ -83,11 +86,16 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    margin-top: 3rem;
   }
 
   &__video {
     width: 100%;
     aspect-ratio: 16 / 9;
+  }
+
+  &__score {
+    margin-top: 3rem;
   }
 }
 
