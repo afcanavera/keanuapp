@@ -1,7 +1,4 @@
 /**
-* FUNCIONALITY: creates the quiz content questions,and stores the score.
- */
-    /**
  * FUNCIONALITY: creates the quiz content questions,and stores the score.
  */
 class Quiz {
@@ -10,7 +7,7 @@ class Quiz {
     #order;
     #questionsNum;
     #checkValidation = false;
-    /*  
+    /* 
           FUNCTIONALITY: Initializes all the quiz questions that will be asked for the quiz session.
   
           Parameters: number of questions to initialize

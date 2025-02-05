@@ -5,7 +5,6 @@ let quizConcluded = false;
 let questionActive = false;
 let questionNow;
 let score = 0;
-let order = 0;
 const form = document.getElementById("start");
 form.addEventListener("click", function (event) {
   score = 0;
@@ -36,24 +35,26 @@ async function setNextQuestion() {
 const form2 = document.getElementById("first_Option");
 form2.addEventListener("click", function (event) {
   event.preventDefault();
-  if (quizActive) {
-    if (questionNow.validateAnswer(questionNow.getOptions().at(0))) {
-      let scoreVal = document.getElementsByClassName("section__score");
-      scoreVal.innerText = "Score: " + String(++score);
-    }
-    order++;
-    setNextQuestion();
+  const val = form2.innerText;
+  console.log(val);
+  let validation = questionNow.validateAnswer(val);
+  let scoreEl = document.querySelector(".section__score");
+  if (validation) {
+    scoreEl.innerText = "Yay! You are right";
+  } else {
+    scoreEl.innerText = "Sorry! You are wrong";
   }
 });
 const form3 = document.getElementById("second_Option");
 form3.addEventListener("click", function (event) {
-    event.preventDefault();
-    if (quizActive) {
-      if (questionNow.validateAnswer(questionNow.getOptions().at(1))) {
-        let scoreVal = document.getElementsByClassName("section__score");
-        scoreVal.innerText = "Score: " + String(++score);
-      }
-      order++;
-      setNextQuestion();
-    }
-  });
+  event.preventDefault();
+  const val = form3.innerText;
+  console.log(val);
+  let validation = questionNow.validateAnswer(val);
+  let scoreEl = document.querySelector(".section__score");
+  if (validation) {
+    scoreEl.innerText = "Yay! You are right";
+  } else {
+    scoreEl.innerText = "Sorry! You are wrong";
+  }
+});
