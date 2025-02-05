@@ -2,7 +2,7 @@ class Question {
   constructor() {
     this.baseUrl = "https://whoa.readme.io/reference";
   }
-
+  
   async intializeQuestion() {
     const response = await axios.get(
       "https://whoa.onrender.com/whoas/random?results=2",
@@ -14,7 +14,7 @@ class Question {
     );
 
     this.questionData = response.data[0];
-    const options = [response.data[0].movie, response.data[1].movie];
+    this.options = [response.data[0].movie, response.data[1].movie];
     return true;
   }
 
