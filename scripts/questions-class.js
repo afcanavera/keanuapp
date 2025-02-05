@@ -4,27 +4,51 @@ class Question {
   }
 
   async intializeQuestion() {
-    const options = { method: "GET", headers: { accept: "application/json" } };
-    fetch("https://whoa.onrender.com/whoas/random", options)
-      .then((res) => res.json())
-      .then((res) => (this.questionData = res))
-      .catch((err) => console.error(err));
+    const response = await axios.get(
+      "https://whoa.onrender.com/whoas/random?results=2",
+      {
+        headers: {
+          accept: "application/json",
+        },
+      }
+    );
 
-    console.log(this.questionData);
+    this.questionData = response.data[0];
+    const options = [response.data[0].movie, response.data[1].movie];
+    return true;
   }
 
   getContent() {
     return this.questionData;
   }
 
-  getOptions() {}
+  getOptions() {
+    return this.options;
+  }
 
-  validateAnswer(String) {}
+  validateAnswer(answer) {
+    if (answer == this.questionData.year) {
+      return true;
+    }
+    return false;
+  }
 
-  getAudio() {}
+  getAudio() {
+    const audio = this.questionData.audio;
+    return audio;
+  }
 
-  getVideo() {}
+  getVideo() {
+    const videolist = this.questionData.video;
+    console.log(videolist["360p"]);
+    return videolist["360p"];
+  }
 }
 
-// let q = new Question();
-// q.intializeQuestion();
+async function getQuestion() {
+  let q = new Question();
+  await q.intializeQuestion();
+  console.log(q.getAudio());
+}
+
+getQuestion();
