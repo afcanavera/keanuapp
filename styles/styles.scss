@@ -22,7 +22,7 @@ body {
   flex-flow: column nowrap;
   justify-content: space-between;
   @include tablet {
-    padding: 5% 20%;
+    padding: 5% 15%;
   }
 }
 
@@ -47,7 +47,7 @@ h1, h2, p {
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   line-height: 1.5rem;
   @include tablet {
     font-size: 2rem;
@@ -57,6 +57,7 @@ h1 {
 
 h2 {
   font-size: 1.5rem;
+  line-height: 1.5rem;
 }
 
 
@@ -65,7 +66,7 @@ h2 {
   height: 14vw;
   border-radius: 100%;
   object-fit: cover;
-  display: inline-block;
+  display: block;
   border: white solid 1px;
   box-shadow: 10px 10px 126px 44px rgba(0,0,0,0.8);
   @include tablet {

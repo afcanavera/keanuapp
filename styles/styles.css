@@ -21,7 +21,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   body {
-    padding: 5% 20%;
+    padding: 5% 15%;
   }
 }
 
@@ -45,7 +45,7 @@ h1, h2, p {
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   line-height: 1.5rem;
 }
 @media screen and (min-width: 768px) {
@@ -57,6 +57,7 @@ h1 {
 
 h2 {
   font-size: 1.5rem;
+  line-height: 1.5rem;
 }
 
 .images {
@@ -65,7 +66,7 @@ h2 {
   border-radius: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  display: inline-block;
+  display: block;
   border: white solid 1px;
   box-shadow: 10px 10px 126px 44px rgba(0, 0, 0, 0.8);
 }
