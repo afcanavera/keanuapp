@@ -47,7 +47,7 @@ form2.addEventListener("click", function (event) {
   if (validation) {
     scoreEl.innerHTML = `<img src="https://media.tenor.com/hY5YVzpFgIkAAAAM/keanu-reeves-woah.gif" alt="">`;
   } else {
-    scoreEl.innerText = "Sorry! You are wrong";
+    scoreEl.innerText = "Sorry! You are wrong. Try another 'whoa'.";
   }
 });
 const form3 = document.getElementById("second_Option");
@@ -60,6 +60,6 @@ form3.addEventListener("click", function (event) {
   if (validation) {
     scoreEl.innerHTML = `<img src="https://media.tenor.com/hY5YVzpFgIkAAAAM/keanu-reeves-woah.gif" alt="">`;
   } else {
-    scoreEl.innerText = "Sorry! You are wrong";
+    scoreEl.innerText = "Sorry! You are wrong. Try another 'whoa'.";
   }
 });
