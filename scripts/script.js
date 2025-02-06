@@ -16,7 +16,7 @@ form.addEventListener("click", function (event) {
   scoreEl.innerHTML = `Which movie is this 'whoa' from?`;
   let movie1 = document.querySelector(".section__video");
   movie1.classList.remove("hide");
-  form.innerHTML = `Give me <i>another</i> 'whoa' to guess!`
+  form.innerHTML = `Give me &nbsp; <i>another</i> &nbsp; 'whoa' to guess!`
 });
 async function setNextQuestion() {
   if (!(quiz.getOrder() >= 10)) {
